@@ -57,3 +57,12 @@ python evaluate.py
 python evaluate.py --models gpt-5,deepseek-v3 --tasks mcq,vsp
 python evaluate.py --output evaluation_results.csv
 ```
+
+## References
+
+This repository is based on ideas and methodology from the following paper:
+
+> Md Tanvirul Alam, Dipkamal Bhusal, Le Nguyen, Nidhi Rastogi. "CTIBench: A Benchmark for Evaluating LLMs in Cyber Threat Intelligence" *NeurIPS 2024*.  
+> [Paper Link](https://proceedings.neurips.cc/paper_files/paper/2024/file/5acd3c628aa1819fbf07c39ef73e7285-Paper-Datasets_and_Benchmarks_Track.pdf)
+
+We thank the authors for their work and open-source contributions.
