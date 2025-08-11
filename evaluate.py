@@ -27,7 +27,7 @@ DEFAULT_MODELS: List[str] = [
     "gpt-oss-20b",
     "gpt-oss-120b",
     "deepseek-v3",
-    "gemini-25-flash",
+    "gemini-2_5-flash",
     "llama-4-maverick",
 ]
 
@@ -352,23 +352,23 @@ class TaskPaths:
 def _task_map(model_root: str) -> Dict[str, TaskPaths]:
     return {
         "mcq": TaskPaths(
-            predictions=f"results_{model_root}/results_mcq_{model_root}.csv",
+            predictions=f"responses/{model_root}/{model_root}_mcq.csv",
             ground_truth="data/mcq.csv",
         ),
         "rcm": TaskPaths(
-            predictions=f"results_{model_root}/results_rcm_{model_root}.csv",
+            predictions=f"responses/{model_root}/{model_root}_rcm.csv",
             ground_truth="data/rcm.csv",
         ),
         "vsp": TaskPaths(
-            predictions=f"results_{model_root}/results_vsp_{model_root}.csv",
+            predictions=f"responses/{model_root}/{model_root}_vsp.csv",
             ground_truth="data/vsp.csv",
         ),
         "ate": TaskPaths(
-            predictions=f"results_{model_root}/results_ate_{model_root}.csv",
+            predictions=f"responses/{model_root}/{model_root}_ate.csv",
             ground_truth="data/ate.csv",
         ),
         "taa": TaskPaths(
-            predictions=f"results_{model_root}/results_taa_{model_root}.csv",
+            predictions=f"responses/{model_root}/{model_root}_taa.csv",
             ground_truth="data/taa.csv",
             alias_dict="data/taa_alias_dict.pickle",
             related_dict="data/taa_related_dict.pickle",
