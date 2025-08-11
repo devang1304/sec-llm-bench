@@ -1,4 +1,4 @@
-# cti-code/googleaiplatform.py
+# connect_aiplatform.py
 
 import os
 import csv

@@ -1,4 +1,4 @@
-# sec-llm-bench/openai.py
+# connect_openai.py
 
 import csv
 import time

@@ -1,4 +1,4 @@
-# cti-code/gcp_vertexai.py
+# connect_vertexai.py
 
 import os
 import csv

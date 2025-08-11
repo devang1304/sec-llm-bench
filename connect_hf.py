@@ -1,4 +1,4 @@
-# sec-llm-bench/huggingface.py
+# connect_hf.py
 
 import csv
 import time

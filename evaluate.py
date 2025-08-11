@@ -1,9 +1,4 @@
-# sec-llm-bench/evaluation.py
-
-# Usage:
-#   python sec-llm-bench/evaluation.py
-#   python sec-llm-bench/evaluation.py --models gpt-5,deepseek-v3 --tasks mcq,vsp
-#   python sec-llm-bench/evaluation.py --output evaluation_results.csv
+# evaluate.py
 
 from __future__ import annotations
 
