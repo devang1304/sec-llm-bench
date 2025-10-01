@@ -30,7 +30,8 @@ TOP_P = float(os.getenv("TOP_P", 1.0))
 MAX_OUTPUT_TOKENS = int(os.getenv("MAX_OUTPUT_TOKENS", 1024))
 
 # --- Model root for output folder naming ---
-MODEL_ROOT = MODEL
+MODEL_ROOT = MODEL.split(".")[1] if "." in MODEL else MODEL
+MODEL_ROOT = MODEL_ROOT.replace("-", "_").replace("/", "_").replace(":", "_").lower()
 
 # --- Initialize Bedrock Runtime client ---
 client = boto3.client("bedrock-runtime", region_name=AWS_REGION)
@@ -221,7 +222,8 @@ TASK = [
 ]
 
 # Create directory for results if it doesn't exist
-os.makedirs(f"results_{MODEL_ROOT}", exist_ok=True)
+output_dir = f"responses/{MODEL_ROOT}"
+os.makedirs(output_dir, exist_ok=True)
 
 output_headers = ["#", "response"]
 LOG_FILE = "run.log"
@@ -230,7 +232,7 @@ for input_csv in TASK:
     print(f"Processing file: {input_csv}...")
     start_time = time.time()
 
-    output_csv = f"results_{MODEL_ROOT}/results_{input_csv[5:8]}_{MODEL_ROOT}.csv"
+    output_csv = f"{output_dir}/{MODEL_ROOT}_{input_csv[5:8]}.csv"
     os.makedirs(os.path.dirname(output_csv), exist_ok=True)
 
     with open(input_csv, mode="r", newline="", encoding="utf-8") as infile, \
